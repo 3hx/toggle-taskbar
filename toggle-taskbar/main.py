@@ -1,12 +1,13 @@
 import ctypes
 import keyboard
 
-# Define the necessary constants
-SW_HIDE = 0
-SW_SHOW = 5
-GWL_STYLE = -16
-WS_VISIBLE = 268435456
-# State
+# Define the necessary constants for Windows API
+SW_HIDE = 0  # Constant to hide the window
+SW_SHOW = 5  # Constant to show the window
+GWL_STYLE = -16  # Constant to get window style
+WS_VISIBLE = 268435456  # Constant for visible window style
+
+# State variable to track if taskbar is active or not
 isActive = False
 
 

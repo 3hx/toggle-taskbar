@@ -15,7 +15,9 @@ Unlike other utilities that merely hide the taskbar, this package toggles it, en
 Here's how other solutions stack up:
 
 - Package A: Only hides the taskbar, causing issues with ...
+
 - Package B:
+
 
 ## Installation
 

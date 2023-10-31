@@ -16,7 +16,7 @@ Here's how other solutions stack up:
 
 - Package A: Only hides the taskbar, causing issues with ...
 
-- Package B: ....
+- Package B:
 
 
 ## Installation

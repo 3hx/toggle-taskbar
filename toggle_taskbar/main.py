@@ -28,14 +28,8 @@ def toggle_taskbar():
     return False  # This suppresses the key event
 
 
-def check_ctrl_esc(e):
-    if keyboard.is_pressed("ctrl"):  # Check if Ctrl is pressed along with Esc
-        return toggle_taskbar()
-    return True  # Don't suppress the key event if Ctrl is not pressed
-
-
 # Bind the function to a key
-keyboard.on_press_key("esc", check_ctrl_esc, suppress=True)
+keyboard.add_hotkey("ctrl+esc", toggle_taskbar, suppress=True)
 
 # Keep the program running to listen for key presses
 keyboard.wait()

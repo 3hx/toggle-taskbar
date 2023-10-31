@@ -126,3 +126,4 @@ dmypy.json
 toggle-taskbar/.aider.chat.history.md
 
 .vscode/
+.aider*

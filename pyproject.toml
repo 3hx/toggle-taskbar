@@ -1,13 +1,15 @@
 [tool.poetry]
 name = "toggle-taskbar"
+
 version = "0.1.0"
 description = ""
 authors = ["3hx <code@3hx.me>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<3.13"
 keyboard = "^0.13.5"
+pyinstaller = "^6.1.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -16,3 +18,6 @@ ipykernel = "^6.25.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+build = "toggle_taskbar.pyinstaller:install"

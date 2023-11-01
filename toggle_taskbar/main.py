@@ -1,35 +1,19 @@
-import ctypes
 import keyboard
-
-# Define the necessary constants for Windows API
-SW_HIDE = 0  # Constant to hide the window
-SW_SHOW = 5  # Constant to show the window
-GWL_STYLE = -16  # Constant to get window style
-WS_VISIBLE = 268435456  # Constant for visible window style
-
-# State variable to track if taskbar is active or not
-isActive = False
+from . import cli
+from . import gui
 
 
-# Hide the taskbar
-def toggle_taskbar():
-    # Toggles isPressed
-    global isActive
-    isActive = not isActive
-
-    taskbar = ctypes.windll.user32.FindWindowW("Shell_TrayWnd", None)
-    style = ctypes.windll.user32.GetWindowLongW(taskbar, GWL_STYLE)
-    if isActive:
-        ctypes.windll.user32.ShowWindow(taskbar, SW_HIDE)
+def run():
+    print("running")
+    # Assume a condition to decide whether to run CLI or GUI
+    is_cli = True  # Set to False to run GUI
+    if is_cli:
+        cli.main()
     else:
-        if not style & WS_VISIBLE:
-            ctypes.windll.user32.ShowWindow(taskbar, SW_SHOW)
+        gui.main()  # Assuming there's a main function in gui.py
 
-    return False  # This suppresses the key event
+    keyboard.wait()  # Wait for a keypress to exit
 
 
-# Bind the function to a key
-keyboard.add_hotkey("ctrl+esc", toggle_taskbar, suppress=True)
-
-# Keep the program running to listen for key presses
-keyboard.wait()
+if __name__ == "__main__":
+    run()

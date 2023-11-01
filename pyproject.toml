@@ -20,4 +20,5 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
+dev = "toggle_taskbar.main:run"
 build = "toggle_taskbar.pyinstaller:install"

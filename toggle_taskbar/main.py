@@ -1,6 +1,4 @@
-import keyboard
-from . import cli
-from . import gui
+from toggle_taskbar import cli, gui
 
 
 def run():
@@ -12,7 +10,7 @@ def run():
     else:
         gui.main()  # Assuming there's a main function in gui.py
 
-    keyboard.wait()  # Wait for a keypress to exit
+    gui.create_tray_icon()
 
 
 if __name__ == "__main__":
